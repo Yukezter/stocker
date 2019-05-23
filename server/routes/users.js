@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'server/.env' })
 const router = require("express-promise-router")()
 const passport = require('passport')
 const passportConfig = require('../config/passport')
