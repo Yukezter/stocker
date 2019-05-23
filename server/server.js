@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'server/.env' })
 const socket = require('socket.io')
 const jwt = require('jsonwebtoken')
 

@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'server/.env' })
 const axios = require('axios')
 
 const baseUrl = 'https://cloud.iexapis.com/stable'
