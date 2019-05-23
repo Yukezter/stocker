@@ -7,6 +7,7 @@ const flash = require('connect-flash')
 const express = require('express')
 const app = express()
 
+require('./config/passport')
 const jwtStrategy = passport
 	.authenticate('jwt', {
 		session: false, 
