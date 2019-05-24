@@ -1,12 +1,12 @@
-require('dotenv').config({ path: 'server/.env' })
+require('dotenv').config({ path: `${__dirname}/.env` })
 const axios = require('axios')
 
+const iexToken = process.env.IEX_SK
 const baseUrl = 'https://cloud.iexapis.com/stable'
-const token = process.env.IEX_SK || ''
 
 const query = (endpoint, parameters = '') => {
-    console.log(`${baseUrl}${endpoint}?${parameters}token=${token}`)
-    return axios.get(`${baseUrl}${endpoint}?${parameters}token=${token}`)
+    console.log(`${baseUrl}${endpoint}?${parameters}token=${iexToken}`)
+    return axios.get(`${baseUrl}${endpoint}?${parameters}token=${iexToken}`)
 }
 
 module.exports = {
