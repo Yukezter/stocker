@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Container, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
-import classnames from 'classnames';
+import { Container, TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap'
+import classnames from 'classnames'
 
 import Watchlist from '../components/Watchlist'
-import SearchForm from '../components/SearchForm'
 
 export default class Dashboard extends Component {
 
@@ -32,7 +31,7 @@ export default class Dashboard extends Component {
             <NavLink
               style={{cursor: 'pointer'}}
               className={classnames({ active: this.state.activeTab === '1' })}
-              onClick={() => { this.toggle('1'); }}
+              onClick={() => { this.toggle('1') }}
             >
               Watchlist
             </NavLink>
@@ -58,7 +57,7 @@ export default class Dashboard extends Component {
           <TabPane tabId="2">
             <Row>
               <Col sm="6">
-                <SearchForm />
+                
               </Col>
             </Row>
           </TabPane>

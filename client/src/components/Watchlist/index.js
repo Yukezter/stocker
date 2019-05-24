@@ -4,6 +4,7 @@ import io from 'socket.io-client'
 import './style.css'
 
 import StockRow from '../StockRow'
+import SearchForm from '../SearchForm'
 
 export default class Watchlist extends Component {
 	
@@ -20,20 +21,15 @@ export default class Watchlist extends Component {
 			})
 		}
 		this.addLoadedChild = this.addLoadedChild.bind(this)
+		this.addStock = this.addStock.bind(this)
 		this.removeStock = this.removeStock.bind(this)
 	}
 
 	componentDidMount() {
-		this.state.socket.on('connect', () => {
-			console.log('connected...')
-		})
-		
 		this.state.socket.on('watchlist', data => {
-
 			if (!data.watchlist.length) {
 				this.setState({ loading: false })
 			}
-
 			this.setState({ tickers: data.watchlist })
 		})
 	}
@@ -49,6 +45,21 @@ export default class Watchlist extends Component {
 		}
 	}
 
+	addStock(watchlist) {
+		this.state.socket.disconnect()
+		this.setState(state => {
+			return {
+				loading: true,
+				childrenLoaded: 0,
+				tickers: [],
+				socket: state.socket.connect('//localhost:8080', {
+					query: { token: this.props.token },
+					secure: true
+				})
+			}
+		})
+	}
+
 	removeStock(watchlist) {
 		this.setState({ tickers: watchlist })
 	}
@@ -56,7 +67,7 @@ export default class Watchlist extends Component {
   render() {
     return (
       <Container>
-
+				<SearchForm addStock={this.addStock} token={this.props.token} />
 				<div 
 				className={this.state.loading ? 'lds-ripple mx-auto' : 'd-none'}><div></div><div></div>
 				</div>

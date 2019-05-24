@@ -7,7 +7,6 @@ const flash = require('connect-flash')
 const express = require('express')
 const app = express()
 
-
 const jwtStrategy = passport
 	.authenticate('jwt', {
 		session: false, 
@@ -25,12 +24,11 @@ app.use(session({
 }))
 app.use(flash())
 
-// Routes
 app.use('/users', require('./routes/users'))
 app.use('/stocks', require('./routes/stocks'))
 app.use('/dashboard', jwtStrategy, require('./routes/dashboard'))
     
-// Error handling
+// Error responses
 app.use('/users', (err, req, res, next) => {
   res.json({ [err.name]: err.message })
 })
