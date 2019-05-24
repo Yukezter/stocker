@@ -30,8 +30,6 @@ app.use('/users', require('./routes/users'))
 app.use('/stocks', require('./routes/stocks'))
 app.use('/dashboard', jwtStrategy, require('./routes/dashboard'))
     
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
-
 // Error handling
 app.use('/users', (err, req, res, next) => {
   res.json({ [err.name]: err.message })
