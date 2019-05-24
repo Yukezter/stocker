@@ -14,7 +14,7 @@ export default class Watchlist extends Component {
 			loading: true,
 			childrenLoaded: 0,
 			tickers: [],
-			socket: io.connect('http://localhost:8080', {
+			socket: io.connect('//localhost:8080', {
 				query: { token: this.props.token }
 			})
 		}

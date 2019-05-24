@@ -1,4 +1,3 @@
-require('dotenv').config({ path: `${__dirname}/.env` })
 const request = require('request')
 
 const openStream = (ticker) => {
