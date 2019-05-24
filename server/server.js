@@ -7,7 +7,7 @@ const app = require('./app')
 const PORT = process.env.PORT || 8080
 const server = app.listen(PORT, console.log(`Server listening on port ${PORT}`))
 const io = socket(server)
-io.origins('*:*')
+io.set('origins', '*:*')
 
 const User = require('./models/User')
 const s = require('./socket')
