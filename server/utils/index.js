@@ -1,3 +1,4 @@
+require('dotenv').config({ path: 'server/.env' })
 const crypto = require('crypto')
 const JWT = require('jsonwebtoken')
 
