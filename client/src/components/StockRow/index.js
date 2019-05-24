@@ -35,18 +35,6 @@ export default class StockRow extends Component {
 	async removeRow() {
 
 		this.props.socket.emit(`remove-${this.props.ticker}`)
-		this.props.socket.removeListener(`${this.props.ticker}-data`, data => {
-			this.setState({
-				company: data.company,
-				price: data.price,
-				change: data.change,
-				changePercent: data.changePercent
-			})
-			if (loaded === false) {
-				loaded = true
-				this.props.addLoadedChild()
-			}
-		})
 		
 		const config = {
 			method: 'get',
