@@ -1,4 +1,4 @@
-require('dotenv').config({ path: `./server/.env` })
+// require('dotenv').config({ path: `./server/.env` })
 const axios = require('axios')
 
 const iexToken = process.env.IEX_SK
