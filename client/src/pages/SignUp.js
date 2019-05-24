@@ -40,7 +40,7 @@ class SignUp extends Component {
         }
 
         return (
-            <Jumbotron>
+            <Jumbotron className="bg-transparent mx-auto" style={{width: '500px'}}>
                 <Container className="text-center">
                     <h1 className="display-3">Sign Up{this.props.user}</h1>
                     <p className="lead">This is the sign up page.</p>

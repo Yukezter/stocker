@@ -69,8 +69,9 @@ export default class SearchForm extends Component {
           value={selectedOption}
           onChange={this.handleChange}
           options={this.state.options}
+          className='my-2'
         />
-        <Button onClick={this.handleSubmit}>Add</Button>
+        <Button className='my-2' onClick={this.handleSubmit}>Add</Button>
       </Fragment>
     )
   }
