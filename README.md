@@ -8,7 +8,7 @@ How it works:
 * Use the drop down search to pick any stocks you'd like to watch
 * Enjoy!
 
-** If stock market is closed, then server-side cached stock data is provided. **
+**If stock market is closed, then server-side cached stock data is provided.**
 
 Technologies used:
 * React
