@@ -4,7 +4,7 @@ const streams = {}
 const stocks = {}
 
 module.exports = {
-	onConnect: (io) => {
+	onConnect: io => {
 		
 		io.on('connection', async socket => {
 

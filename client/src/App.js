@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { connect } from 'react-redux'
-import { loadUser, signInUser,signUpUser,logOutUser } from './actions/authActions'
+import { loadUser, signInUser, signUpUser, logOutUser } from './actions/authActions'
 
 import ProtectedRoute from './ProtectedRoute'
 import Nav from './components/Nav'
